@@ -1,6 +1,10 @@
-# news
+# News Application made with Flutter and RestFul API
+![Flutter news app](https://github.com/brakenseddik/news/blob/main/logo.png)
 
-A new Flutter application.
+
+### Created & Maintained By
+
+[brakenseddik](https://github.com/brakenseddik) ([@brakenseddik](https://twitter.com/brakenseddik)) 
 
 ## Getting Started
 
