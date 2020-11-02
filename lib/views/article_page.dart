@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:news/components/theme.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Article extends StatefulWidget {
@@ -17,31 +18,7 @@ class _ArticleState extends State<Article> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 18.0),
-            child: Icon(
-              Icons.four_k,
-              color: Colors.white,
-            ),
-          )
-        ],
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Alpha',
-              style: TextStyle(color: Colors.black),
-            ),
-            Text(
-              'News',
-              style: TextStyle(color: Colors.deepPurple),
-            ),
-          ],
-        ),
-      ),
+      appBar: appbar,
       body: Container(
         child: WebView(
           initialUrl: widget.Blogurl,

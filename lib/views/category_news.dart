@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/components/BlogTile.dart';
+import 'package:news/components/theme.dart';
 import 'package:news/helpers/news.dart';
 import 'package:news/models/article.dart';
 
@@ -33,31 +34,7 @@ class _CategoryNewsState extends State<CategoryNews> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 18.0),
-            child: Icon(
-              Icons.four_k,
-              color: Colors.white,
-            ),
-          )
-        ],
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Alpha',
-              style: TextStyle(color: Colors.black),
-            ),
-            Text(
-              'News',
-              style: TextStyle(color: Colors.deepPurple),
-            ),
-          ],
-        ),
-      ),
+      appBar: appbar,
       body: _loading
           ? Center(
               child: CircularProgressIndicator(),

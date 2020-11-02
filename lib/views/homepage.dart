@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news/components/BlogTile.dart';
 import 'package:news/components/CategoryTile.dart';
+import 'package:news/components/theme.dart';
 import 'package:news/helpers/data.dart';
 import 'package:news/helpers/news.dart';
 import 'package:news/models/article.dart';
@@ -28,6 +29,9 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  String _connectionStatus = 'Unknown';
+  ConnectionState _connectivity;
+
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -38,22 +42,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Alpha',
-              style: TextStyle(color: Colors.black),
-            ),
-            Text(
-              'News',
-              style: TextStyle(color: Colors.deepPurple),
-            ),
-          ],
-        ),
-      ),
+      appBar: appbar,
       body: _loading
           ? Center(
               child: CircularProgressIndicator(),

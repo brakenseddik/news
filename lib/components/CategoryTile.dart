@@ -1,9 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news/views/category_news.dart';
 
 class CategoryTile extends StatelessWidget {
   final String photo, name;
+
   CategoryTile({this.photo, this.name});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,14 +22,16 @@ class CategoryTile extends StatelessWidget {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: Image.network(
-                photo,
-                width: 120,
-                height: 60,
-                fit: BoxFit.cover,
-              ),
-            ),
+                borderRadius: BorderRadius.circular(5),
+                child: CachedNetworkImage(
+                  placeholder: (context, url) =>
+                      Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  imageUrl: photo,
+                  width: 120,
+                  height: 60,
+                  fit: BoxFit.cover,
+                )),
             Container(
               alignment: Alignment.center,
               width: 120,
